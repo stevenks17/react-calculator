@@ -1,14 +1,16 @@
-export interface Action {
-  type: string
+export type Operation = "+" | "-" | "*" | "÷" | undefined;
 
+export interface Action {
+  type: string;
   payload?: {
-    digit: string | number;
-    operation?: string;
+    digit?: string;
+    operation?: Operation;
   };
 }
 
 export type State = {
-  currentOperand: string ;
-  previousOperand: string;
-  operation: string;
+  overwrite: boolean;
+  currentOperand: string | undefined;
+  previousOperand: string | undefined;
+  operation: Operation | undefined;
 };

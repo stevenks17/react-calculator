@@ -1,11 +1,11 @@
 import { Dispatch } from "react";
 import { ACTIONS } from "./Actions";
-import { Action } from "./CalculatorTypes";
+import { Action, Operation } from "./CalculatorTypes";
 interface OperationButtonProps {
   dispatch: Dispatch<Action>;
-  operation: string;
+  operation: Operation;
 }
-export default function OperationButton({ dispatch, operation }): OperationButtonProps {
+export default function OperationButton({ dispatch, operation }: OperationButtonProps) {
   return (
     <button
       onClick={() =>
